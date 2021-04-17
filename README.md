@@ -1,1 +1,1 @@
-Install composer require alexsmartalexandrov/converter "dev-master"
+Install composer require alexsmartalexandrov/converter
