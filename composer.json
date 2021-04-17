@@ -12,7 +12,6 @@
     "require": {
         "php": ">=7.2.5"
     },
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "ConverterService\\": "src/"
