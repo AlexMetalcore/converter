@@ -1,12 +1,13 @@
-.. code-block:: bash
+```bash
     Install composer require alexsmartalexandrov/converter
+```
 
 Usage
 -----
 
 Creating``ConverterService`` instance:
 
-``php``
+```php
 
     use \ConverterService\ConverterService;
 
