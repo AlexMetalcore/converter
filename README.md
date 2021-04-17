@@ -1,4 +1,5 @@
-Install composer require alexsmartalexandrov/converter
+.. code-block:: bash
+    Install composer require alexsmartalexandrov/converter
 
 Usage
 -----
