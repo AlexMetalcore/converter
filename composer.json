@@ -9,6 +9,7 @@
             "email": "alexandrov141089@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.2.5"
     },
@@ -16,5 +17,6 @@
         "psr-4": {
             "ConverterService\\": "src/"
         }
-    }
+    },
+    "prefer-stable": true
 }
