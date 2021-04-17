@@ -1,3 +1,6 @@
+Installation
+------------
+
 ```bash
     Install composer require alexsmartalexandrov/converter
 ```
