@@ -1,5 +1,5 @@
 {
-    "name": "alex/converter",
+    "name": "alexsmartalexandrov/converter",
     "type": "library",
     "description": "convert data html to csv or csv to html, prepare data for convert and other",
     "authors": [
