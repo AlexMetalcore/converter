@@ -1,1 +1,1 @@
-Install composer require alex/converter
+Install composer require alexsmartalexandrov/converter
