@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace alex\ConverterService;
+namespace ConverterService;
 
 /**
  * Interface ConverterServicesInterface

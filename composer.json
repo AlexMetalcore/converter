@@ -1,5 +1,6 @@
 {
     "name": "alex/converter",
+    "type": "library",
     "description": "convert data html to csv or csv to html, prepare data for convert and other",
     "authors": [
         {
@@ -13,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "alex\\ConverterService\\": "src/"
+            "ConverterService": "src/"
         }
     }
 }
