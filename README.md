@@ -14,5 +14,5 @@ Creating``ConverterService`` instance:
     $service = new \ConverterService\ConverterService();
     
     1. $service->prepareDataFormat($requestObject, ConverterServicesInterface $converter)
-    2. $service->setHttpClient($httpClient)->convertPdfToHtml('filepath, url or base64 pdf', $options[])
+    2. If you add http client - $service->setHttpClient($httpClient)->convertPdfToHtml('filepath, url or base64 pdf', $options[])
 ```
