@@ -1,0 +1,19 @@
+{
+    "name": "alex/converter",
+    "description": "convert data html to csv or csv to html, prepare data for convert and other",
+    "authors": [
+        {
+            "name": "Александров Александр",
+            "email": "alexandrov141089@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    
+    },
+    "autoload": {
+        "psr-4": {
+            "alex\\ConverterService\\": "src/"
+        }
+    }
+}
