@@ -8,7 +8,7 @@
 Использование
 -----
 
-Создайте``ConverterService`` instance:
+Создайте объект ``ConverterService``:
 
 ``` php
 
@@ -21,7 +21,7 @@
     $service->getDataFormat($requestObject, ConverterServicesInterface $converter) 
 ```
 
-Если вы хотите конвертировать PDF в html, Вам нужно передать либо строку либо url, лbбо закодированный формат pdf. Опции для оптимизации html на выходе.
+Если вы хотите конвертировать PDF в html, Вам нужно передать либо строку либо url, либо закодированный формат pdf. Опции для оптимизации html строки на выходе.
 
 Пример опций
 
