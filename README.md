@@ -33,7 +33,7 @@
      ]
 ```
 ``` php
-$service->convertPdfToHtml('filepath, url or base64 pdf', $options[])
+    $service->convertPdfToHtml('filepath, url or base64 pdf', $options[])
 ```
 По умолчанию данные по урл получаем через file_get_contents. Если вы хотите использовать http client то можете его передать таким образом
 
