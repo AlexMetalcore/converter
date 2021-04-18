@@ -44,7 +44,7 @@ class ConverterService
      * @return string|null
      * @throws Exception
      */
-    public function prepareDataFormat(object $request, ConverterFormatInterface $converter)
+    public function getDataFormat(object $request, ConverterFormatInterface $converter)
     {
         if ($request === null) {
             throw new Exception('Empty request');
@@ -53,11 +53,7 @@ class ConverterService
         if (method_exists($request, 'getRawBody')) {
             $data = $request->getRawBody();
         } else {
-            $data = $request;
-        }
-
-        if ($data === null) {
-            throw new Exception('Empty data');
+            $data = json_encode($request);
         }
 
         $obj = $this->getJson($data);
