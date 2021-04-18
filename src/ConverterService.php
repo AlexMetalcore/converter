@@ -44,7 +44,7 @@ class ConverterService
      * @return string|null
      * @throws Exception
      */
-    public function getDataFormat(object $request, ConverterFormatInterface $converter)
+    public function getDataFormat(object $request, ConverterFormatInterface $converter): ?string
     {
         if ($request === null) {
             throw new Exception('Empty request');
