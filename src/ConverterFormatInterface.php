@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ConverterService;
 
 /**
- * Interface ConverterServicesInterface
+ * Interface ConverterFormatInterface
  */
-interface ConverterServicesInterface
+interface ConverterFormatInterface
 {
     /**
      * @param string $filePath

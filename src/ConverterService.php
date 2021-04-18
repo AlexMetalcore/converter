@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace ConverterService;
 
+use DOMDocument;
+use stringEncode\Exception;
+
 /**
  * Class ConverterService
  */
@@ -14,8 +17,14 @@ class ConverterService
     public const TYPE_XLS = 'Xls';
     public const TYPE_XLSX = 'Xlsx';
 
+    /**
+     * @var array[]
+     */
     private $fileExtensionImages = ['png', 'jpg'];
 
+    /**
+     * @var object
+     */
     private $httpClient;
 
     /**
@@ -31,11 +40,11 @@ class ConverterService
 
     /**
      * @param object $request
-     * @param ConverterServicesInterface|null $converter
+     * @param ConverterFormatInterface $converter
      * @return string|null
-     * @throws CException
+     * @throws Exception
      */
-    public function prepareDataFormat(object $request, ConverterServicesInterface $converter)
+    public function prepareDataFormat(object $request, ConverterFormatInterface $converter)
     {
         if ($request === null) {
             throw new Exception('Empty request');
@@ -75,7 +84,7 @@ class ConverterService
      * ]
      * @param array $options
      * @return string
-     * @throws CException
+     * @throws Exception
      */
     public function convertPdfToHtml($sourcePdf, array $options = []): string
     {
@@ -111,7 +120,7 @@ class ConverterService
      * @param $sourcePdf
      * @param string $tmpDir
      * @return array|mixed|string[]
-     * @throws CException
+     * @throws Exception
      */
     private function prepareInputDataFiles($sourcePdf, string $tmpDir): array
     {
@@ -142,14 +151,14 @@ class ConverterService
      * @param string $sourcePdf
      * @param string $tmpDir
      * @return string
-     * @throws CException
+     * @throws Exception
      */
     private function getDataFromUrl(string $sourcePdf, string $tmpDir): string
     {
         if ($this->httpClient) {
             $response = $this->httpClient->get($sourcePdf);
             if ($response['error']) {
-                throw new CException('Error get data from url');
+                throw new Exception('Error get data from url');
             }
             $response = $response['result'];
         } else {
@@ -239,7 +248,7 @@ class ConverterService
      * @param string $tmpDir
      * @param string|null $options
      * @return array
-     * @throws CException
+     * @throws Exception
      */
     private function createFilesForConvert($sourcePdf, string $tmpDir, string $options = null): array
     {
@@ -248,14 +257,14 @@ class ConverterService
                 $outputFile = $tmpDir . sha1(uniqid() . $item);
                 if (empty($options) === false) {
                     if (in_array($options , $this->fileExtensionImages) === false) {
-                        throw new CException('Incorrect extension file to convert');
+                        throw new Exception('Incorrect extension file to convert');
                     }
                     exec('/usr/bin/pdftohtml -c -s -fmt ' . $options . ' ' . $item . ' ' . $outputFile);
                 } else {
                     exec('/usr/bin/pdftohtml -c -s -i ' . $item . ' ' . $outputFile);
                 }
             } else {
-                throw new CException('File pdf does not exists');
+                throw new Exception('File pdf does not exists');
             }
         }
 
@@ -263,7 +272,7 @@ class ConverterService
         $htmls = glob($tmpDir . "*.html");
 
         if (empty($images) && empty($htmls)) {
-            throw new CException('Files does not exists');
+            throw new Exception('Files does not exists');
         }
 
         return [
@@ -362,7 +371,12 @@ class ConverterService
         return $prepareDataConvert;
     }
 
-    private function getJson($string)
+    /**
+     * @param string $string
+     * @return mixed
+     * @throws Exception
+     */
+    private function getJson(string $string)
     {
         $data = json_decode($string);
         if (json_last_error() === JSON_ERROR_NONE) {
