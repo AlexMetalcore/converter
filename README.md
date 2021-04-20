@@ -18,7 +18,7 @@
 ```
 Если вы хотите получить преобразование с реквеста данные в формат с HTML в CSV или наборот Вам нужно реализовать ConverterServicesInterface 
 ``` php 
-    $service->getFormatedData($requestObject, ConverterServicesInterface $converter) 
+    $service->getFormatedData($requestObject, new Formatter()) 
 ```
 
 Если вы хотите конвертировать PDF в html, Вам нужно передать либо строку либо url, либо закодированный формат pdf. Опции для оптимизации html строки на выходе.
