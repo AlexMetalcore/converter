@@ -1,5 +1,5 @@
 {
-    "name": "alexsmartalexandrov/converter",
+    "name": "alexsmart/converter",
     "type": "library",
     "description": "convert data html to csv or csv to html, prepare data for convert and other",
     "license": "MIT",

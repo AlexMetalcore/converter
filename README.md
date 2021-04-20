@@ -2,7 +2,7 @@
 ------------
 
 ```bash
-    Install composer require alexsmartalexandrov/converter
+    Install composer require alexsmart/converter
 ```
 
 Использование
